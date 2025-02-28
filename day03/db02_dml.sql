@@ -74,7 +74,8 @@ from NewBook;
 
 -- where 절 없이 update하지말 것
 update NewBook
-set price = 80000;
+set price = 80000
+where bookid = 3;
 
 -- delete 데이터 삭제
 -- 3-49 Book 테이블에서 도서번호가 11번인 도서를 삭제하시오.

@@ -52,8 +52,23 @@ CREATE TABLE NewBook(
 );
 
 -- 3-35 : 아래 속성의 NewCustomer 테이블을 생성하시오.
--- custid - I
+-- custid - INTEGER, 기본키
+-- name - VARCHAR(100) NOT NULL
+-- address - VARCHAR(255) NOT NULL
+-- phone - VARCHAR(30) NOT NULL
+CREATE TABLE NewCustomer(
+	 custid integer primary key,
+     name varchar(100) not null,
+     address varchar(255) not null,
+     phone varchar(30) not null
+);
 
+-- 3-36 다음과 같은 속성의 NewOrders를 생성하시오
+-- orderid - INTEGER, PRIMARY KEY
+-- bookid - INTEGER, NOT NULL, FORIEGNKEY(NewBook bookid)
+-- custid - INTEGER, NOT NULL, FORIEGNKEY(NewCustomer custid)
+-- saleprice - INTEGER
+-- orderdate - DATE
 CREATE TABLE NewOrders(
 	orderid integer,
     bookid integer not null,
