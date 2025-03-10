@@ -56,7 +56,7 @@ IoT 개발자 데이터베이스 저장소
         > docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=12345 -d -p 3306:3306 mysql:latest
         ```
 
-        - 컴퓨터 재시작 후 커넽이너 자동시작 옵션 명렁어
+        - 컴퓨터 재시작 후 컨테이너 자동시작 옵션 명렁어
         ```shell
         > docker update --restart=always mysql-container
         ```
@@ -384,4 +384,25 @@ IoT 개발자 데이터베이스 저장소
 
 ## 9일차
 - tkinter DB연동 GUI 앱 개발
+    1. MySQL madang 데이터베이스 사용하는 madang 사용자 생성, 권한
+    2. madang DB에 student 테이블 생성 및 더미데이터 추가
+        ```sql
+        create table students(
+            std_id integer primary key auto_increment,
+            std_name varchar(100) not null,
+            std_mobile varchar(20) null,
+            std_regyear int not null
+        );
+
+        -- 더미데이터 추가
+        insert into students(std_name, std_mobile, std_regyear)
+        values('홍길동', '010-9999-8888', 2020);
+        ```
+    3. tkinter 템플릿코드 작성 - 기본적인 GUI앱 툴
+        <img src="./image/db07.png" width="700">
+
+    4. 데이터베이스 CRUD 함수 구현
+        <img src="./image/db08.png" width="700">
+- 데이터베이스 연습
+    - SQL, 모델링 연습
 - 코딩테스트
